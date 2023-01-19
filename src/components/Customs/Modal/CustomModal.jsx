@@ -1,5 +1,6 @@
 import {
 	Button,
+	Image,
 	Modal,
 	StatusBar,
 	Text,
@@ -25,6 +26,13 @@ export const CustomModal = ({
 				<Text style={styles.modalCloseTitle}>Close Modal</Text>
 			</TouchableOpacity>
 			<View style={styles.modalContainer}>
+				<Text style={styles.ownerTask}>Created by</Text>
+				<Image
+					style={styles.modalImage}
+					source={{
+						uri: `https://i.pravatar.cc/${selectedTask.id}`,
+					}}
+				/>
 				<Text style={styles.modalId}>Task id {selectedTask.id}</Text>
 				<Text style={styles.modalId}>
 					Date created : {selectedTask.date}

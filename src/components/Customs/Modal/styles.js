@@ -22,6 +22,19 @@ export const styles = StyleSheet.create({
 		alignItems: "center",
 		padding: 20,
 	},
+	ownerTask: {
+		width: "100%",
+		textAlign: "center",
+		fontSize: 12,
+		color: colors.secondary,
+		paddingBottom: 3,
+	},
+	modalImage: {
+		width: 150,
+		height: 150,
+		borderRadius: 150,
+		marginVertical: 15,
+	},
 	modalId: {
 		width: "85%",
 		fontSize: 14,
