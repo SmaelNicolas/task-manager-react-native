@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
 		justifyContent: "flex-start",
 		flexDirection: "column",
 		alignItems: "center",
-		padding: 30,
+		padding: 20,
 	},
 	modalId: {
 		fontSize: 14,
@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
 	},
 	modalValueContainer: {
 		width: "85%",
-		paddingVertical: 50,
+		paddingVertical: 10,
 	},
 	modalValue: {
 		fontSize: 14,
@@ -42,6 +42,6 @@ export const styles = StyleSheet.create({
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
-		marginHorizontal: 20,
+		marginVertical: 30,
 	},
 });

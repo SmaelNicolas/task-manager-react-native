@@ -25,7 +25,7 @@ export const CustomModal = ({
 				<Text style={styles.modalCloseTitle}>Close Modal</Text>
 			</TouchableOpacity>
 			<View style={styles.modalContainer}>
-				<Text style={styles.modalId}>Task ID : {selectedTask.id}</Text>
+				<Text style={styles.modalId}>Task id {selectedTask.id}</Text>
 				<View style={styles.modalValueContainer}>
 					<Text style={styles.modalValue}>{selectedTask.value}</Text>
 				</View>
