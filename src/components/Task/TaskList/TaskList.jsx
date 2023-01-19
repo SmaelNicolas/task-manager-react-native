@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList } from "react-native";
-import { styles } from "../../../../styles";
 import { TaskItem } from "../TaskItem/TaskItem";
+import { styles } from "./styles";
 
 export const TaskList = ({ tasks, onHandleModal }) => {
 	const renderItem = ({ item }) => (
