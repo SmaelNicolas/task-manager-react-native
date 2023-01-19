@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
-import { styles } from "../styles";
-import { AddItem, CustomModal, TaskList } from "./components";
+import { Keyboard, StatusBar, StyleSheet, View } from "react-native";
+import { AddItem, CustomModal, TaskList, Title } from "./components";
+import { styles } from "./styles";
 
 export const App = () => {
 	const [task, setTask] = useState();
@@ -17,51 +17,58 @@ export const App = () => {
 		setTasks([
 			...tasks,
 			{
-				id: Math.random().toString(),
+				id: (Math.floor(Math.random() * 300) + 1).toString(),
 				value: task,
 				complete: false,
+				date: new Date().toDateString(),
 			},
 		]);
 		setTask("");
+		Keyboard.dismiss();
 	};
 
 	const onHandleModal = (item) => {
 		setSelectedTask(item);
-		setIsModalVisible(!isModalVisible);
+		changeModalStatus();
 	};
 
 	const onHandleDelete = () => {
 		setTasks((prevTaskList) =>
 			prevTaskList.filter((task) => task.id !== selectedTask.id)
 		);
-		setIsModalVisible(!isModalVisible);
+		changeModalStatus();
 	};
 
 	const onHandleStatus = (task) => {
 		task.complete = !task.complete;
+		changeModalStatus();
+	};
+
+	const changeModalStatus = () => {
+		setIsModalVisible(!isModalVisible);
 	};
 
 	return (
-		<View style={styles.container}>
-			<AddItem
-				placeholder={"Add a new task"}
-				task={task}
-				onHandlerChange={onHandlerChange}
-				onHandlerSubmit={onHandlerSubmit}
-				buttonText={"ADD"}
-			/>
-			<TaskList
-				tasks={tasks}
-				onHandleModal={onHandleModal}
-				style={styles.listContainer}
-			/>
-			<CustomModal
-				isModalVisible={isModalVisible}
-				setIsModalVisible={setIsModalVisible}
-				onHandleDelete={onHandleDelete}
-				onHandleStatus={onHandleStatus}
-				selectedTask={selectedTask}
-			/>
-		</View>
+		<>
+			<View style={styles.container}>
+				<Title />
+				<AddItem
+					buttonText={"Add task"}
+					onHandlerChange={onHandlerChange}
+					onHandlerSubmit={onHandlerSubmit}
+					placeholder={"Create a new task"}
+					task={task}
+				/>
+				<TaskList onHandleModal={onHandleModal} tasks={tasks} />
+				<CustomModal
+					isModalVisible={isModalVisible}
+					onHandleDelete={onHandleDelete}
+					onHandleStatus={onHandleStatus}
+					selectedTask={selectedTask}
+					setIsModalVisible={setIsModalVisible}
+				/>
+			</View>
+			<StatusBar />
+		</>
 	);
 };
