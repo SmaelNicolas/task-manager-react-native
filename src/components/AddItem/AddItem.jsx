@@ -17,7 +17,7 @@ export const AddItem = ({
 				autoCorrect={false}
 				autoCapitalize="none"
 				value={task}
-				onChangeText={(e) => onHandlerChange(e)}
+				onChangeText={onHandlerChange}
 			/>
 			<View style={styles.buttonContainer}>
 				<Button
