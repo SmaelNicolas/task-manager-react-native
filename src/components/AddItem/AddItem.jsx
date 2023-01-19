@@ -1,5 +1,5 @@
 import { Button, TextInput, View } from "react-native";
-import { styles } from "../../../styles";
+import { styles } from "./styles";
 
 export const AddItem = ({
 	placeholder,
@@ -19,12 +19,14 @@ export const AddItem = ({
 				value={task}
 				onChangeText={(e) => onHandlerChange(e)}
 			/>
-			<Button
-				disabled={!task}
-				onPress={onHandlerSubmit}
-				title={buttonText}
-				color="#545956"
-			/>
+			<View style={styles.buttonContainer}>
+				<Button
+					disabled={!task}
+					onPress={onHandlerSubmit}
+					title={buttonText}
+					color="#545956"
+				/>
+			</View>
 		</View>
 	);
 };
