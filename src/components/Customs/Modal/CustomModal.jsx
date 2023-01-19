@@ -26,6 +26,9 @@ export const CustomModal = ({
 			</TouchableOpacity>
 			<View style={styles.modalContainer}>
 				<Text style={styles.modalId}>Task id {selectedTask.id}</Text>
+				<Text style={styles.modalId}>
+					Date created : {selectedTask.date}
+				</Text>
 				<View style={styles.modalValueContainer}>
 					<Text style={styles.modalValue}>{selectedTask.value}</Text>
 				</View>

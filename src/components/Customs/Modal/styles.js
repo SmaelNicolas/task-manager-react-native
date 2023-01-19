@@ -23,9 +23,12 @@ export const styles = StyleSheet.create({
 		padding: 20,
 	},
 	modalId: {
+		width: "85%",
 		fontSize: 14,
 		textTransform: "uppercase",
 		color: colors.secondary,
+		textAlign: "left",
+		paddingVertical: 5,
 	},
 	modalValueContainer: {
 		width: "85%",
@@ -35,7 +38,7 @@ export const styles = StyleSheet.create({
 		fontSize: 14,
 		textTransform: "capitalize",
 		color: colors.secondary,
-		padding: 5,
+		paddingVertical: 5,
 	},
 	modalButtonContainer: {
 		width: "85%",
